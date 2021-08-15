@@ -1,0 +1,16 @@
+
+.Purchase{
+    display: flex;
+    flex-direction: row;
+    .CardGrid{
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 20rem));
+        gap: 2rem;
+        justify-content: center;
+    }
+    .Basket{
+        min-width: 350px;
+        max-width: 30%;
+    }
+}
