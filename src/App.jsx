@@ -5,6 +5,9 @@ import SelectPopup from './components/SelectPopup';
 import Basket from './components/Basket';
 import {PopUpSelection, BasketSelection} from './variables/stateInit';
 import {pizzaList} from './variables/pizzaList';
+import {IconButton } from '@material-ui/core';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 //Currently all pizza have the same option list
 const OptionList = {
@@ -23,6 +26,19 @@ function App() {
   const [popup, setPopup] = useState(PopUpSelection);
   //This state controls the basket's inventory
   const [basketList, setBasketList] = useState(BasketSelection);
+  //This state controls the basket button on responsive
+  const [basketEnabled, setBasketEnable] = useState(false);
+
+  const showBasket = () => {
+    const setbool = !basketEnabled;
+    if(setbool){
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    setBasketEnable(setbool);
+  }
+
+  const matches = useMediaQuery('(min-width:700px)');
 
   return (
     <div className="App">
@@ -36,9 +52,19 @@ function App() {
             popup = {popup} setPopup = {setPopup}/>)
           }
         </div>
-        <div className = "Basket">
+        <div className = {"Basket " + (basketEnabled && "active")}>
+
           <Basket setBasketList = {setBasketList} basketList = {basketList}/>
         </div>
+        <div className = "Basket-Space"></div>
+        {!matches &&
+            <IconButton style={{
+              backgroundColor: "#f50057", position: "fixed", right: "15px", bottom: "15px", zIndex: "2"
+              }} onClick={showBasket}>
+                <ShoppingBasketIcon style={{color: "#eeeeee"}}/>
+            </IconButton>
+        }
+
       </div>
     </div>
   );

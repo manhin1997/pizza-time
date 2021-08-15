@@ -1,3 +1,5 @@
+$basket-width: 350px;
+
 .App{
     min-height: 100vh;
     height: 100%;
@@ -11,7 +13,6 @@
         padding: 15px;
         display: flex;
         flex-direction: row;
-        
         .CardGrid{
             flex-grow: 1;
             display: grid;
@@ -20,8 +21,26 @@
             justify-content: center;
         }
         .Basket{
-            min-width: 350px;
-            max-width: 30%;
+            position: absolute;
+            right: 15px;
+            width: $basket-width;
+            transition-duration: 0.75s;
+            transition-property: all;
+            @media (max-width: 700px) {
+                right: calc((#{$basket-width} + 15px) * -1);
+                &.active{
+                    margin: 0;
+                    right: 0px;
+                    width: 100%;
+                }
+            }
+
+        }
+        .Basket-Space{
+            width: $basket-width;
+            @media (max-width: 700px) {
+                width: 0px;
+            }
         }
     }
 }

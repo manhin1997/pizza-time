@@ -60,8 +60,8 @@ function Basket(props){
                     <Fragment>
                         Size: {basket.selectedsizes}<br/>
                         {basket.selectedtoppings.length > 0 && 
-                        <span>Toppings: <br/>
-                        {basket.selectedtoppings.map((topping) => <div style={{marginLeft: "2.5em"}}>{topping}</div>)}</span>}
+                        <div>Toppings: <br/>
+                        {basket.selectedtoppings.map((topping, index) => <div key={index} style={{marginLeft: "2.5em"}}>{topping}</div>)}</div>}
                     </Fragment>
                 }/>
                 <div>{`$${pizza.price}`}</div>
