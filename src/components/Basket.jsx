@@ -53,18 +53,20 @@ function Basket(props){
         const pizza = pizzaList.find((x) => x.key === basket.selectedPizza);
         return(
             <ListItem>
-                <IconButton aria-label="close" style={{marginRight: "10px"}} size="small" onClick={deleteBasketItem} name={props.className}>
+                <IconButton aria-label="close" size="small" style={{marginRight: "10px"}} onClick={deleteBasketItem} name={props.className}>
                     <CloseIcon/>
                 </IconButton>
                 <ListItemText style={{marginRight: "10px"}} primary={pizza.title} secondary={
                     <Fragment>
                         Size: {basket.selectedsizes}<br/>
                         {basket.selectedtoppings.length > 0 && 
-                        <div>Toppings: <br/>
-                        {basket.selectedtoppings.map((topping, index) => <div key={index} style={{marginLeft: "2.5em"}}>{topping}</div>)}</div>}
+                        <span>Toppings: <br/>
+                        {basket.selectedtoppings.map(
+                            (topping, index) => <span key={index} style={{marginLeft: "2.5em", display: "block"}}>{topping}</span>)
+                        }</span>}
                     </Fragment>
                 }/>
-                <div>{`$${pizza.price}`}</div>
+                <div style={{overflow:"visible"}}>{`$${pizza.price}`}</div>
             </ListItem>
         );
     
