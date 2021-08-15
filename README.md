@@ -1,3 +1,3 @@
 # Pizza Demo App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a pizza demo app built using react and material-ui.
+This project was deployed to [HERE](https://manhin1997.github.io/pizza-time/).
