@@ -1,0 +1,2 @@
+.Purchase{display:flex;flex-direction:row}.Purchase .CardGrid{flex-grow:1;display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,20rem));grid-gap:2rem;gap:2rem;justify-content:center}.Purchase .Basket{min-width:350px;max-width:30%}.paper{padding:15px;text-align:center;display:flex;flex-direction:column}.paper .no-items{display:flex;justify-content:center;align-items:center;min-height:150px;width:100%}.paper .sum{min-height:2em}.paper hr{margin-left:0;margin-right:0}
+/*# sourceMappingURL=main.979c3a1a.chunk.css.map */
