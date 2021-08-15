@@ -77,7 +77,7 @@ function SelectPopup(props){
                 </RadioGroup>
             </FormControl>
             <DialogActions>
-                <Button variant="contained" color="primary" onClick={submitPopupResult}>Submit</Button>
+                <Button variant="contained" color="primary" onClick={submitPopupResult}>Add to Basket</Button>
             </DialogActions>
 
         </Dialog>

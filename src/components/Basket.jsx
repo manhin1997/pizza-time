@@ -1,4 +1,4 @@
-import { Button, IconButton, List, ListItem, ListItemText, Paper, Typography } from "@material-ui/core";
+import { Button, IconButton, List, ListItem, ListItemText, Paper } from "@material-ui/core";
 import "./Basket.scss"
 import CloseIcon from '@material-ui/icons/Close';
 import { Fragment } from "react";
