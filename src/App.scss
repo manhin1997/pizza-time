@@ -1,6 +1,7 @@
 $basket-width: 350px;
 
 .App{
+    position: relative;
     min-height: 100vh;
     height: 100%;
     background-image: linear-gradient(90deg, rgb(40,40,40,0.75) 0%,
